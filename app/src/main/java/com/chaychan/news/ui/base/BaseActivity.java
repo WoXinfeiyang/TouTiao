@@ -32,6 +32,7 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity<T extends BasePresenter>  extends AppCompatActivity {
 
     protected T mPresenter;
+    /**上一次按back键的时间戳*/
     private static long mPreTime;
     private static Activity mCurrentActivity;// 对所有activity进行管理
     public static List<Activity> mActivities = new LinkedList<Activity>();
@@ -80,10 +81,10 @@ public abstract class BaseActivity<T extends BasePresenter>  extends AppCompatAc
     public void initListener() {
     }
 
-    //用于创建Presenter和判断是否使用MVP模式(由子类实现)
+    /**用于创建Presenter和判断是否使用MVP模式(由子类实现)*/
     protected abstract T createPresenter();
 
-    //得到当前界面的布局文件id(由子类实现)
+    /**得到当前界面的布局文件id(由子类实现)*/
     protected abstract int provideContentViewId();
 
     @Override

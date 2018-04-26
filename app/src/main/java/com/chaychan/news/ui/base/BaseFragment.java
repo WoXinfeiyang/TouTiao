@@ -24,6 +24,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends LazyLoadFrag
 
     protected T mPresenter;
     private View rootView;
+    /**用于显示加载中、网络异常，空布局、内容布局的StateView对象*/
     protected StateView mStateView;//用于显示加载中、网络异常，空布局、内容布局
     protected Activity mActivity;
 
@@ -99,13 +100,13 @@ public abstract class BaseFragment<T extends BasePresenter> extends LazyLoadFrag
     }
 
 
-    //用于创建Presenter和判断是否使用MVP模式(由子类实现)
+    /**用于创建Presenter和判断是否使用MVP模式(由子类实现)*/
     protected abstract T createPresenter();
 
-    //得到当前界面的布局文件id(由子类实现)
+    /**得到当前界面的布局文件id(由子类实现)*/
     protected abstract int provideContentViewId();
 
-    //加载数据
+    /**加载数据*/
     protected abstract void loadData();
 
     @Override
