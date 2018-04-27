@@ -30,6 +30,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import me.weyye.library.colortrackview.ColorTrackTabLayout;
 
 /**
+ * 首页fragment
  * @author ChayChan
  * @description: 首页fragment
  * @date 2017/6/12  21:47
@@ -224,6 +225,7 @@ public class HomeFragment extends BaseFragment implements OnChannelListener {
         mChannelFragments.remove(starPos);
     }
 
+    /**将datas集合中位于startPos的元素移动到endPos*/
     private void listMove(List datas, int starPos, int endPos) {
         Object o = datas.get(starPos);
         //先删除之前的位置
