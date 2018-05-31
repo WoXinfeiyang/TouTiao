@@ -48,6 +48,7 @@ public abstract class VideoPathDecoder {
 //        webView.loadUrl("file:///android_asset/parse.html");
         webView.loadUrl(srcUrl);
         webView.setWebViewClient(new WebViewClient(){
+
             @Override
             public void onPageFinished(WebView view, String url) {
 //                webView.loadUrl("javascript:getParseParam('" + srcUrl + "')");
@@ -60,6 +61,7 @@ public abstract class VideoPathDecoder {
 
             }
         });
+
     }
 
     private void addJs(WebView webView){

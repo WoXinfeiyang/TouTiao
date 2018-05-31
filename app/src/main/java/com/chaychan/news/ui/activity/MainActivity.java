@@ -75,8 +75,10 @@ public class MainActivity extends BaseActivity {
         mVpContent.setAdapter(mTabAdapter);
         mVpContent.setOffscreenPageLimit(mFragments.size());
         mBottomBarLayout.setViewPager(mVpContent);
+
         //设置条目点击的监听
         mBottomBarLayout.setOnItemSelectedListener(new BottomBarLayout.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(BottomBarItem bottomBarItem, int position) {
                 setStatusBarColor(position);//设置状态栏颜色

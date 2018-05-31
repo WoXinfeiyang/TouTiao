@@ -75,7 +75,8 @@ public class NewsDetailActivity extends NewsDetailBaseActivity {
 
     @Override
     public void onGetNewsDetailSuccess(NewsDetail newsDetail) {
-        mHeaderView.setDetail(newsDetail, new NewsDetailHeaderView.LoadWebListener() {
+
+        mHeaderView.setDetail(newsDetail,new NewsDetailHeaderView.LoadWebListener() {
             @Override
             public void onLoadFinished() {
                 //加载完成后，显示内容布局

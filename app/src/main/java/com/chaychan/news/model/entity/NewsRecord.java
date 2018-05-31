@@ -3,6 +3,7 @@ package com.chaychan.news.model.entity;
 import org.litepal.crud.DataSupport;
 
 /**
+ * 用于记录获取到的新闻,用于上拉加载更多
  * @author ChayChan
  * @description: 用于记录获取到的新闻,用于上拉加载更多
  * @date 2017/6/26  16:07

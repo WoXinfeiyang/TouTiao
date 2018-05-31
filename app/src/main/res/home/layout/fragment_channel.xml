@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
- >
+    >
 
     <ImageView
         android:id="@+id/icon_collapse"
@@ -29,7 +29,9 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"></android.support.v7.widget.RecyclerView>
+            android:padding="10dp">
+
+        </android.support.v7.widget.RecyclerView>
 
         <ImageView
             android:layout_width="match_parent"

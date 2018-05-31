@@ -10,6 +10,7 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 /**
+ * 用于获取新闻记录
  * @author ChayChan
  * @description: 用于获取新闻记录
  * @date 2017/6/26  16:23

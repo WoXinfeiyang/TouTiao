@@ -30,6 +30,7 @@ public class VideoDetailActivity extends NewsDetailBaseActivity {
 
     @Bind(R.id.video_player)
     JCVideoPlayerStandard mVideoPlayer;
+
     @Bind(R.id.iv_back)
     ImageView ivBack;
 
@@ -68,6 +69,7 @@ public class VideoDetailActivity extends NewsDetailBaseActivity {
 
     @Override
     public void onGetNewsDetailSuccess(NewsDetail newsDetail) {
+
         newsDetail.content = "";
         mHeaderView.setDetail(newsDetail, new NewsDetailHeaderView.LoadWebListener() {
             @Override

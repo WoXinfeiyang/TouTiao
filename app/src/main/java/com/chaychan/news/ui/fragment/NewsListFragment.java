@@ -78,6 +78,7 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter> implements
     PowerfulRecyclerView mRvNews;
 
     private String mChannelCode;
+    /**是否是视频列表*/
     private boolean isVideoList;
 
 
@@ -92,13 +93,14 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter> implements
      * 是否是点击底部标签进行刷新的标识
      */
     private boolean isClickTabRefreshing;
+    /**旋转动画*/
     private RotateAnimation mRotateAnimation;
     private Gson mGson = new Gson();
 
-    //新闻记录
+    /**新闻记录*/
     private NewsRecord mNewsRecord;
 
-    //用于标记是否是首页的底部刷新，如果是加载成功后发送完成的事件
+    /**用于标记是否是首页的底部刷新，如果是加载成功后发送完成的事件*/
     private boolean isHomeTabRefresh;
 
     @Override
@@ -328,6 +330,7 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter> implements
         postRefreshCompletedEvent();//发送加载完成的事件
     }
 
+    /**发送刷新完成事件*/
     private void postRefreshCompletedEvent() {
         if (isClickTabRefreshing) {
             //如果是点击底部刷新获取到数据的,发送加载完成的事件

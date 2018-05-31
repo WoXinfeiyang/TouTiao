@@ -8,7 +8,10 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
-
+/**
+ * Presenter抽象基类
+ * @param <V> View
+ * */
 public abstract class BasePresenter<V> {
 
     protected ApiService mApiService = ApiRetrofit.getInstance().getApiService();

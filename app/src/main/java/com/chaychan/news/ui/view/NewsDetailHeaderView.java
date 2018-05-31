@@ -112,6 +112,7 @@ public class NewsDetailHeaderView extends FrameLayout {
                 }
             }
         });
+
     }
 
     /**添加JS代码，获取所有图片的链接以及为图片设置点击事件*/

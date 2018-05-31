@@ -83,8 +83,7 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                 break;
             case Channel.TYPE_MY_CHANNEL:
                 //我的频道列表
-                helper
-                        .setVisible(R.id.ivDelete, mIsEdit && !(channel.title.equals("推荐")))//编辑模式就显示删除按钮
+                helper.setVisible(R.id.ivDelete, mIsEdit && !(channel.title.equals("推荐")))//编辑模式就显示删除按钮
                         .setOnLongClickListener(R.id.rlItemView, new View.OnLongClickListener() {
                             @Override
                             public boolean onLongClick(View v) {
@@ -97,7 +96,8 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                                     onChannelDragListener.onStarDrag(helper);
                                 return true;
                             }
-                        }).setOnTouchListener(R.id.tvChannel, new View.OnTouchListener() {
+                        }).setOnTouchListener(R.id.tvChannel,new View.OnTouchListener() {
+
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (!mIsEdit) return false;//正常模式无需监听触摸
@@ -120,9 +120,11 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                         return false;
                     }
                 }).getView(R.id.ivDelete).setTag(true);//在我的频道里面设置true标示，之后会根据这个标示来判断编辑模式是否显示
+
                 helper.setText(R.id.tvChannel, channel.title).setOnClickListener(R.id.ivDelete, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         //执行删除，移动到推荐频道列表
                         if (mIsEdit) {
                             int otherFirstPosition = getOtherFirstPosition();
@@ -143,7 +145,6 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                                     //我的频道最后一行 之后一个，移动后
                                     targetY -= targetView.getHeight();
                                 }
-
                                 //我的频道 移动到 推荐频道的第一个
                                 channel.setItemType(Channel.TYPE_OTHER_CHANNEL);//改为推荐频道类型
 
@@ -164,6 +165,7 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                 });
                 break;
             case Channel.TYPE_OTHER_CHANNEL:
+
                 //频道推荐列表
                 helper.setText(R.id.tvChannel, channel.title).setVisible(R.id.ivDelete, false)
                         .setOnClickListener(R.id.tvChannel, new View.OnClickListener() {
@@ -186,7 +188,6 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
                                     int myChannelSize = getMyChannelSize();//这里我是为了偷懒 ，算出来我的频道的大小
                                     if (myChannelSize % spanCount == 0) {
                                         //添加到我的频道后会换行，所以找到倒数第4个的位置
-
                                         View lastFourthView = mRecyclerView.getLayoutManager().findViewByPosition(getMyLastPosition() - 3);
 //                                        View lastFourthView = mRecyclerView.getChildAt(getMyLastPosition() - 3);
                                         targetX = lastFourthView.getLeft();
@@ -255,13 +256,17 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel,BaseViewHo
      * 添加需要移动的 镜像View
      */
     private ImageView addMirrorView(ViewGroup parent, View view) {
+
         view.destroyDrawingCache();
         //首先开启Cache图片 ，然后调用view.getDrawingCache()就可以获取Cache图片
         view.setDrawingCacheEnabled(true);
+
+
         ImageView mirrorView = new ImageView(view.getContext());
         //获取该view的Cache图片
         Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
         mirrorView.setImageBitmap(bitmap);
+
         //销毁掉cache图片
         view.setDrawingCacheEnabled(false);
         int[] locations = new int[2];

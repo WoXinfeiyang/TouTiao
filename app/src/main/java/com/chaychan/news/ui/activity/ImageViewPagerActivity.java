@@ -96,7 +96,6 @@ public class ImageViewPagerActivity extends BaseActivity implements ViewPager.On
         mVpPics.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         mVpPics.addOnPageChangeListener(this);
 
-
         mVpPics.setCurrentItem(mCurrentPosition);// 设置当前所在的位置
         setIndicator(mCurrentPosition);//设置当前位置指示
     }
@@ -109,7 +108,7 @@ public class ImageViewPagerActivity extends BaseActivity implements ViewPager.On
     @Override
     public void onPageSelected(int position) {
         mCurrentPosition = position;
-        ;//页面变化时，设置当前的指示
+        //页面变化时，设置当前的指示
         setIndicator(mCurrentPosition);
     }
 

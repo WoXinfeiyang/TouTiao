@@ -10,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
  */
 
 public class ItemDragHelperCallBack extends ItemTouchHelper.Callback {
+
     private OnChannelDragListener onChannelDragListener;
 
     public ItemDragHelperCallBack(OnChannelDragListener onChannelDragListener) {
@@ -24,6 +25,7 @@ public class ItemDragHelperCallBack extends ItemTouchHelper.Callback {
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
         int dragFlags;
+
         if (manager instanceof GridLayoutManager || manager instanceof StaggeredGridLayoutManager) {
             //监听上下左右拖动
             dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
@@ -40,7 +42,7 @@ public class ItemDragHelperCallBack extends ItemTouchHelper.Callback {
             return false;
         }
         if (onChannelDragListener != null)
-            onChannelDragListener.onItemMove(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+            onChannelDragListener.onItemMove(viewHolder.getAdapterPosition(),target.getAdapterPosition());
         return true;
     }
 

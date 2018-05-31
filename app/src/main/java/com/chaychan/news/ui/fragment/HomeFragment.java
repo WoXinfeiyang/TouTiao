@@ -82,7 +82,7 @@ public class HomeFragment extends BaseFragment implements OnChannelListener {
             String[] channels = getResources().getStringArray(R.array.channel);
             String[] channelCodes = getResources().getStringArray(R.array.channel_code);
             //默认添加了全部频道
-            for (int i = 0; i < channelCodes.length; i++) {
+            for(int i = 0; i < channelCodes.length; i++) {
                 String title = channels[i];
                 String code = channelCodes[i];
                 mSelectedChannels.add(new Channel(title, code));

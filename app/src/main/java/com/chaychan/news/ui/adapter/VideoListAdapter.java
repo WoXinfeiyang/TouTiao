@@ -65,7 +65,7 @@ public class VideoListAdapter extends BaseQuickAdapter<News,BaseViewHolder> {
         JCVideoPlayerStandard videoPlayer = helper.getView(R.id.video_player);
         GlideUtils.load(mContext, news.video_detail_info.detail_video_large_image.url, videoPlayer.thumbImageView, R.color.color_d8d8d8);//设置缩略图
 
-        videoPlayer.setAllControlsVisible(GONE, GONE, VISIBLE, GONE, VISIBLE, VISIBLE, GONE);
+        videoPlayer.setAllControlsVisible(GONE,VISIBLE, VISIBLE,VISIBLE, VISIBLE, VISIBLE,VISIBLE);
         videoPlayer.tinyBackImageView.setVisibility(GONE);
         videoPlayer.setPosition(helper.getAdapterPosition());//绑定Position
 
